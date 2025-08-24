@@ -1320,28 +1320,59 @@
                 ears.</p>
             </div>
             <div class="col-xl-8">
-				<form action="https://formspree.io/f/xandwevr" method="POST" class="d-flex flex-column gap-7" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-				  <div>
-					<input type="text" name="name" class="form-control border-bottom border-dark" placeholder="Name" required>
-				  </div>
-				  <div>
-					<input type="email" name="email" class="form-control border-bottom border-dark" placeholder="Email" required>
-				  </div>
-				  <div>
-					<textarea name="message" class="form-control border-bottom border-dark" placeholder="Tell us about your project" rows="3" required></textarea>
-				  </div>
+				<form action="https://formspree.io/f/YOUR_FORM_ID"
+      method="POST"
+      enctype="multipart/form-data"
+      class="d-flex flex-column gap-7"
+      data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
 
-				  <!-- simple spam honeypot -->
-				  <input type="text" name="_gotcha" style="display:none">
+  <div>
+    <input type="text" name="name" class="form-control border-bottom border-dark"
+           placeholder="Name" required autocomplete="name">
+  </div>
 
-				  <!-- where to redirect on success (optional) -->
-				  <input type="hidden" name="_redirect" value="https://theprodlab.com/thanks">
+  <div>
+    <input type="email" name="email" class="form-control border-bottom border-dark"
+           placeholder="Email" required autocomplete="email">
+  </div>
 
-				  <button type="submit" class="btn w-100 justify-content-center">
-					<span class="btn-text">Submit message</span>
-					<iconify-icon icon="lucide:arrow-up-right" class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
-				  </button>
-				</form>
+  <div>
+    <textarea name="message" class="form-control border-bottom border-dark"
+              placeholder="Tell us about your project" rows="3" required></textarea>
+  </div>
+
+  <!-- CV upload (single file). Remove "required" if you want it optional -->
+  <div>
+    <label for="cv" class="form-label small mb-1">Upload CV (PDF or DOC/DOCX)</label>
+    <input id="cv" name="cv"
+           type="file"
+           class="form-control border-bottom border-dark"
+           accept=".pdf,.doc,.docx">
+  </div>
+
+  <!-- optional: allow multiple files -->
+  <!-- <input id="cv" name="cv" type="file" multiple accept=".pdf,.doc,.docx"> -->
+
+  <!-- spam honeypot -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- optional: redirect after success -->
+  <input type="hidden" name="_redirect" value="https://theprodlab.com/thanks">
+
+  <!-- optional: set email subject -->
+  <input type="hidden" name="_subject" value="New website enquiry (with CV)">
+
+  <button type="submit" class="btn w-100 justify-content-center">
+    <span class="btn-text">Submit message</span>
+    <iconify-icon icon="lucide:arrow-up-right"
+      class="btn-icon bg-white text-dark round-52 rounded-circle hstack justify-content-center fs-7 shadow-sm"></iconify-icon>
+  </button>
+
+  <p class="small mb-0" aria-live="polite">
+    We’ll only use your details to reply to your message.
+  </p>
+</form>
+
 
             </div>
           </div>
